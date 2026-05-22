@@ -20,10 +20,10 @@ app.set("view engine", "ejs");
 // 4.ROUTER
 app.post("/create-item", (req, res) => {
   console.log("post /create-item");
-
   const reja = req.body;
   db.collection("plans").insertOne(reja, (err, data) => {
-    res.json(data.ops[0]);
+  
+  res.json(data.ops[0]);
   });
 });
 

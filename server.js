@@ -2,14 +2,14 @@ const http = require("http");
 const mongodb = require("mongodb");
 
 const connectionString =
-  "mongodb+srv://justin:UkzqPcPOpAodPqxA@cluster0.wbjad.mongodb.net/Reja";
+  "mongodb://umarkaziyev:wkJCcSIkYlBsHVKK@ac-gymt3jz-shard-00-00.ov499s2.mongodb.net:27017,ac-gymt3jz-shard-00-01.ov499s2.mongodb.net:27017,ac-gymt3jz-shard-00-02.ov499s2.mongodb.net:27017/?ssl=true&replicaSet=atlas-hjqqlv-shard-0&authSource=admin&appName=Cluster0";
 
 mongodb.connect(
   connectionString,
   { useUnifiedTopology: true },
   (err, client) => {
     if (err) {
-      console.log("Error MongoDB connection: stop building backend server");
+      console.log("Error MongoDB connection: stop building backend server",err);
     } else {
       console.log("MongoDB connection succeed");
       module.exports = client;
